@@ -18,7 +18,7 @@
 	
 	<?php  
 
-	/*  Step 1 - Create a database in PHPmyadmin
+	/*  Step 1 - Create a database in PHPmyadmin 
 
 		Step 2 - Create a table like the one from the lecture
 
