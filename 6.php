@@ -31,7 +31,7 @@
 		echo "Pass: ".$pass; 
 		if (strlen($uid) > 10) {
 			# code...
-			echo "UID không được quá 10 ký tự!<br>";
+			echo "UID không được quá 10 ký tự !<br>";
 		}
 		if (strlen($pass) < 3) {
 			# code...
