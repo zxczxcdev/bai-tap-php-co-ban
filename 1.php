@@ -24,6 +24,7 @@
 
 		// Function echo này giúp in ra nội dung trong ngoặc "..."
 		echo "<h1>Hello Word</h1> " ;
+		echo "<h1>Hello Word</h1> " ;
 
 
 
