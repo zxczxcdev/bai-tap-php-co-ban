@@ -1,0 +1,14 @@
+{
+  "name": "practicial-app",
+  "version": "1.0.0",
+  "description": "Đây là bài tập cơ bản về PHP",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "PHP"
+  ],
+  "author": "Khoa Nguyên",
+  "license": "ISC"
+}
