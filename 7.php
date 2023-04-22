@@ -13,16 +13,35 @@
 
 
 	<article class="main-content col-xs-8">
+		<form action="7.php" method="post">
+			<input type="text" name="username" placeholder="Your username...">
+			<input type="password" name="password" placeholder="Your password...">
+			<input type="submit" name="login">
+		</form>
 	
 	
 	
 	<?php  
+	if (isset($_POST['login'])) {
+		# code...
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$connectdb = mysqli_connect('localhost','root','','loginapp');
+		if ($connectdb) {
+			# code...
+			echo "DB Connected";
+		} else {
+			# code...
+			echo "DB Not Connected! Error";
+		}
 
-	/*  Step 1 - Create a database in PHPmyadmin 
+	}
 
-		Step 2 - Create a table like the one from the lecture
+	/*  Step 1 - Create a database in PHPmyadmin (đã tạo db loginapp)
 
-		Step 3 - Insert some Data
+		Step 2 - Create a table like the one from the lecture (done)
+
+		Step 3 - Insert some Data (done)
 
 		Step 4 - Connect to Database and read data
 
