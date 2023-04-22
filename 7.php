@@ -26,13 +26,22 @@
 		# code...
 		$username = $_POST['username'];
 		$password = $_POST['password'];
-		$connectdb = mysqli_connect('localhost','root','','loginapp');
+		$connectdb = mysqli_connect('localhost','root','','loginapp'); 
 		if ($connectdb) {
 			# code...
 			echo "DB Connected";
 		} else {
 			# code...
-			echo "DB Not Connected! Error";
+			die("DB Not Connected! Error");
+		}
+		$sqlquery = "INSERT INTO user(username,password)"."VALUE ('$username','$password')";
+		$result = mysqli_query($connectdb,$sqlquery);
+		if ($result) {
+			# code...
+			echo "Đăng kí thành công";
+		} else {
+			# code...
+			die('Đăng kí thất bại');
 		}
 
 	}
