@@ -20,7 +20,8 @@
 		</form>
 	
 	
-	
+		<!-- Step 3 - Insert some Data: -->
+		
 	<?php  
 	if (isset($_POST['login'])) {
 		# code...
@@ -34,7 +35,7 @@
 			# code...
 			die("DB Not Connected! Error");
 		}
-		$sqlquery = "INSERT INTO user(username,password)"."VALUE ('$username','$password')";
+		$sqlquery = "INSERT INTO user(username,password) VALUE ('$username','$password')";
 		$result = mysqli_query($connectdb,$sqlquery);
 		if ($result) {
 			# code...
@@ -45,12 +46,27 @@
 		}
 
 	}
+	// Step 4 - Connect to Database and read data
+	$connectdb = mysqli_connect('localhost','root','','loginapp'); 
+	$read_data = "SELECT * FROM  user";
+	$ketqua = mysqli_query($connectdb,$read_data);
+	
+	while ($row = mysqli_fetch_assoc($ketqua)) {
+		# code...
+		?>
+		<pre>
+<?php print_r($row); ?>
+		</pre>
+		<?php
+		
+	}
+	
 
 	/*  Step 1 - Create a database in PHPmyadmin (đã tạo db loginapp)
 
 		Step 2 - Create a table like the one from the lecture (done)
 
-		Step 3 - Insert some Data (done)
+		Step 3 - Insert some Data 
 
 		Step 4 - Connect to Database and read data
 
