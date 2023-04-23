@@ -1,6 +1,6 @@
 <?php include "functions.php"; ?>
 <?php include "includes/header.php";?>
-    
+<?php include "db.php";?>  <!-- kết nối database -->
 
 	<section class="content">
 
@@ -27,14 +27,6 @@
 		# code...
 		$username = $_POST['username'];
 		$password = $_POST['password'];
-		$connectdb = mysqli_connect('localhost','root','','loginapp'); // khai báo biến kết nối tới mysql
-		if ($connectdb) {
-			# code...
-			echo "DB Connected";
-		} else {
-			# code...
-			die("DB Not Connected! Error");
-		}
 		$sqlquery = "INSERT INTO user(username,password) VALUE ('$username','$password')"; // lệnh in vào mysql
 		$result = mysqli_query($connectdb,$sqlquery);
 		if ($result) {
@@ -47,16 +39,23 @@
 
 	}
 	// Step 4 - Connect to Database and read data
-	$connectdb = mysqli_connect('localhost','root','','loginapp'); 
+	
 	$read_data = "SELECT * FROM  user"; //Lệnh chọn tất cả dữ liệu trong bảng user
 	$ketqua = mysqli_query($connectdb,$read_data);
 	
 	while ($row = mysqli_fetch_assoc($ketqua)) { // mysqli_fetch_assoc : trả về kiểu giữ liệu kết nối
 		# code...
+		$id = $row["id"]; // lấy tất cả liên kết có name = id trong $rows
 		?>
+		<h3>ID: <?php print_r($id); ?> </h3>
+		
+
+		
+
 		<pre>
 <?php print_r($row); ?>
 		</pre>
+		
 		<?php
 		
 	}
