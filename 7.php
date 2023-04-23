@@ -27,7 +27,7 @@
 		# code...
 		$username = $_POST['username'];
 		$password = $_POST['password'];
-		$connectdb = mysqli_connect('localhost','root','','loginapp'); 
+		$connectdb = mysqli_connect('localhost','root','','loginapp'); // khai báo biến kết nối tới mysql
 		if ($connectdb) {
 			# code...
 			echo "DB Connected";
@@ -35,7 +35,7 @@
 			# code...
 			die("DB Not Connected! Error");
 		}
-		$sqlquery = "INSERT INTO user(username,password) VALUE ('$username','$password')";
+		$sqlquery = "INSERT INTO user(username,password) VALUE ('$username','$password')"; // lệnh in vào mysql
 		$result = mysqli_query($connectdb,$sqlquery);
 		if ($result) {
 			# code...
@@ -48,10 +48,10 @@
 	}
 	// Step 4 - Connect to Database and read data
 	$connectdb = mysqli_connect('localhost','root','','loginapp'); 
-	$read_data = "SELECT * FROM  user";
+	$read_data = "SELECT * FROM  user"; //Lệnh chọn tất cả dữ liệu trong bảng user
 	$ketqua = mysqli_query($connectdb,$read_data);
 	
-	while ($row = mysqli_fetch_assoc($ketqua)) {
+	while ($row = mysqli_fetch_assoc($ketqua)) { // mysqli_fetch_assoc : trả về kiểu giữ liệu kết nối
 		# code...
 		?>
 		<pre>
@@ -66,9 +66,9 @@
 
 		Step 2 - Create a table like the one from the lecture (done)
 
-		Step 3 - Insert some Data 
+		Step 3 - Insert some Data  (done)
 
-		Step 4 - Connect to Database and read data
+		Step 4 - Connect to Database and read data (done)
 
 */
 	
