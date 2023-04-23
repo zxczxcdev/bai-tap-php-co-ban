@@ -1,6 +1,7 @@
 <?php include "functions.php"; ?>
 <?php include "includes/header.php";?>
 <?php include "db.php";?>  <!-- kết nối database -->
+<?php include "func-b7.php";?>
 
 	<section class="content">
 
@@ -74,7 +75,18 @@
 	?>
 
 
-
+<h1>Form Update user từ ID:</h1>
+<form action="7.php" method="post">
+			<input type="text" name="username" placeholder="Username...">
+			<input type="password" name="password" placeholder="Password...">
+			<select name="id" id="">
+				<?php 
+				getID();
+				?>
+				
+			</select>
+			<input type="submit" name="update" value="Update user">
+		</form>
 
 
 </article><!--MAIN CONTENT-->
