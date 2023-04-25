@@ -26,8 +26,17 @@
 	<?php  
 	if (isset($_POST['login'])) {
 		# code...
+		
 		$username = $_POST['username'];
 		$password = $_POST['password'];
+
+        // SQL injection
+		$username = mysqli_real_escape_string($connectdb , $username); 
+		$password = mysqli_real_escape_string($connectdb , $password);
+
+		// Mã hóa password trước khi add vào sql
+		$password = crypt($password , '$2a$07$fteamvndaokhoanguyen210999$');
+
 		$sqlquery = "INSERT INTO user(username,password) VALUE ('$username','$password')"; // lệnh in vào mysql
 		$result = mysqli_query($connectdb,$sqlquery);
 		if ($result) {
@@ -91,6 +100,7 @@
 		</form>
 
 <?php
+
 if (isset($_POST['update'])) {
 	# code...
 	if (isset($_POST['delete'])) {

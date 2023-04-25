@@ -26,6 +26,13 @@
 		Step 4 - echo the variable
 
 	*/
+	$variable = "daokhoanguyen";
+	$salt = "fteam.vn-daokhoanguyen";
+	$hashed   = crypt($variable , $salt) ;
+	$pass = $hashed;
+	echo $pass;
+
+
 	
 	?>
 
