@@ -88,6 +88,14 @@
 			<input type="submit" name="update" value="Update user">
 		</form>
 
+<?php
+if (isset($_POST['update'])) {
+	# code...
+	updateUser();
+}
+?>
+
+
 
 </article><!--MAIN CONTENT-->
 
