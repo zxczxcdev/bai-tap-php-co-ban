@@ -75,7 +75,7 @@
 	?>
 
 
-<h1>Form Update user từ ID:</h1>
+<h1>Form Update/Delete user từ ID:</h1>
 <form action="7.php" method="post">
 			<input type="text" name="username" placeholder="Username...">
 			<input type="password" name="password" placeholder="Password...">
@@ -84,15 +84,24 @@
 				getID();
 				?>
 				
-			</select>
+			</select> <br>
+			<input type="checkbox" name="delete" value="delete">Delete user? <br>
 			<input type="submit" name="update" value="Update user">
+		
 		</form>
 
 <?php
 if (isset($_POST['update'])) {
 	# code...
-	updateUser();
+	if (isset($_POST['delete'])) {
+        // Nếu checkbox được chọn, thực thi lệnh $_POST['delete']
+        deleteUser();
+    } else {
+        // Nếu checkbox không được chọn, thực thi lệnh updateUser()
+        updateUser();
+    }
 }
+
 ?>
 
 
